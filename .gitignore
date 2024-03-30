@@ -2,7 +2,6 @@
 .imi
 *.class
 
-=======
 # Default ignored files
 /shelf/
 /workspace.xml
@@ -43,4 +42,6 @@ build
 
 # BlueJ files
 *.ctxt
+.Src/target
+
 
