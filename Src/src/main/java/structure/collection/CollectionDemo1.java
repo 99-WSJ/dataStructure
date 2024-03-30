@@ -81,7 +81,7 @@ public class CollectionDemo1 {
         });*/
 
         //lambda表达式
-        c.forEach(s -> System.out.println(s));
+//        c.forEach(s -> System.out.println(s));
 
     }
 

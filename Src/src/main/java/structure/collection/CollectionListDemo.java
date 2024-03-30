@@ -55,7 +55,7 @@ public class CollectionListDemo {
 //                System.out.println(s);
 //            });
 
-        c.forEach(s -> System.out.println(s));
+//        c.forEach(s -> System.out.println(s));
 
         ListIterator<String> it2 = c.listIterator();
         while(it2.hasNext()){
