@@ -1,4 +1,4 @@
-package leetcodeLearn.combineProblem;
+package leetcodeLearn.combine;
 
 import java.util.ArrayList;
 import java.util.List;

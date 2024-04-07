@@ -1,20 +1,19 @@
-package leetcodeLearn.combineProblem;
+package leetcodeLearn.combine;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
-public class Solution39 {
+public class Solution40 {
     List<List<Integer>> res = new ArrayList<>();
     LinkedList<Integer> path = new LinkedList<>();
     public List<List<Integer>> solution(int[] nums, int target) {
         if(nums.length == 0) {
-            return res;
+            return null;
         }
         Arrays.sort(nums);
         backTracing(nums, target, 0,0);
-        return res;
+//        Set<List<Integer>> result = new HashSet<>();
+//        result.addAll(res);
+        return new ArrayList<>(res);
     }
 
     private void backTracing(int[] nums, int target, int sum,int startIndex) {
@@ -26,18 +25,21 @@ public class Solution39 {
             return;
         }
 
-        for(int i = startIndex; i< nums.length; i++) {
+        for(int i = startIndex; i< nums.length && sum + nums[i] <= target; i++) {
+            if(i>startIndex && nums[i]== nums[i-1]) {
+                continue;
+            }
             path.add(nums[i]);
             sum = sum + nums[i];
-            backTracing(nums,target,sum, i);
+            backTracing(nums,target,sum, i + 1);
             path.removeLast();
             sum = sum - nums[i];
         }
     }
 
     public static void main(String[] args) {
-        Solution39 s = new Solution39();
-        List<List<Integer>> res = s.solution(new int[]{2, 3, 6, 7}, 7);
+        Solution40 s = new Solution40();
+        List<List<Integer>> res = s.solution(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 30);
         System.out.println(res);
     }
 

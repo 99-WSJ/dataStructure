@@ -1,4 +1,4 @@
-package leetcodeLearn.partitionProblem;
+package leetcodeLearn.partition;
 
 import java.util.ArrayList;
 import java.util.Deque;
