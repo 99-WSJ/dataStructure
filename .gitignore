@@ -43,5 +43,9 @@ build
 # BlueJ files
 *.ctxt
 .Src/target
+**/exam/
+
+## git fetch origin
+## git reset --hard origin/master
 
 
