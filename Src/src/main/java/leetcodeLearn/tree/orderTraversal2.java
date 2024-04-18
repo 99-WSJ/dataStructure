@@ -28,6 +28,7 @@ public class orderTraversal2 {
         node3.right = node7;
 
         orderTraversal2 orderTraversal = new orderTraversal2();
+        int res = orderTraversal.fib(5);
 //        List<Integer> list = orderTraversal.preorder(node1);
 //        List<Integer> list = orderTraversal.inorder(node1);
         List<Integer> list = orderTraversal.postorder(node1);
@@ -83,5 +84,17 @@ public class orderTraversal2 {
         }
         Collections.reverse(list);
         return list;
+    }
+
+
+    public int fib(int N) {
+        if (N < 2) {
+            return N;
+        }
+        int a =fib(N - 1);
+        int b =fib(N - 2);
+        return a + b;
+
+//        return fib(N - 1) + fib(N - 2);
     }
 }
