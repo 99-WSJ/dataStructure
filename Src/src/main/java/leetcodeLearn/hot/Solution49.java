@@ -3,7 +3,7 @@ package leetcodeLearn.hot;
 import javax.swing.*;
 import java.util.*;
 
-class Solution {
+class Solution49 {
     public static void main(String[] args) {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
         System.out.println(groupAnagrams(strs));
