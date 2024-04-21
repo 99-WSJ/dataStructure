@@ -6,10 +6,10 @@ import java.util.stream.IntStream;
 
 /**
  * @author wsj
- * @description
+ * @description 128、最长连续序列
  * @date 2024年04月18日 16:16
  */
-public class Solution128 {
+public class hot3 {
     public static void main(String[] args) {
 //        int[] nums = {100, 4, 200, 1, 3, 2};
 //        int[] nums = {0,3,7,2,5,8,4,6,0,1};

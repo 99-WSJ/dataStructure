@@ -1,9 +1,13 @@
 package leetcodeLearn.hot;
 
-import javax.swing.*;
 import java.util.*;
 
-class Solution49 {
+/**
+ * @author wsj
+ * @description  49、字母异位词分组
+ * @date 2024年04月21日 16:11
+ */
+class hot2 {
     public static void main(String[] args) {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
         System.out.println(groupAnagrams(strs));
