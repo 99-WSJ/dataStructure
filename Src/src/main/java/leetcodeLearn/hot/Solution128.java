@@ -1,8 +1,7 @@
 package leetcodeLearn.hot;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.IntStream;
 
 /**
@@ -16,6 +15,32 @@ public class Solution128 {
 //        int[] nums = {0,3,7,2,5,8,4,6,0,1};
 //        int[] nums = {0,0,1 ,3,2,5,6,7,8,9};
         int[] nums = {1,0,-1};
+        new CopyOnWriteArrayList<>();
+        new Vector<>();
+        Stack<Object> st = new Stack<>();
+        st.push(nums);
+        new Stack<>();
+        Queue<Integer> queue = new LinkedList<>();
+        Queue<Integer> queue2 = new ArrayDeque<>();
+        st.isEmpty();
+        Arrays.sort(nums);
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        Collections.sort(list);
+        Collections.synchronizedList(list);
+        List<Integer> list1 = new LinkedList<>();
+        List<Integer> list2 = new CopyOnWriteArrayList<>();
+        List<Integer> list3 = new Vector<>();
+        List<Integer> list4 = new CopyOnWriteArrayList<>();
+
+        TreeSet<Object> hashSet = new TreeSet<>();
+        HashSet<Object> set = new HashSet<>();
+        LinkedHashSet<Object> linkedHashSet = new LinkedHashSet<>();
+
+
+        TreeMap<Object, Object> treeMap = new TreeMap<>();
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        LinkedHashMap<Integer, Integer> linkedHashMap = new LinkedHashMap<Integer, Integer>();
         System.out.println(longestConsecutive(nums));
     }
     public static int longestConsecutive(int[] nums) {
