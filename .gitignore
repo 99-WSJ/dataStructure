@@ -47,6 +47,7 @@ build
 **/exam/
 
 ## git fetch origin
-## git reset --hard origin/master
+## git reset --hard origin/master  回到远程仓库的位置
 
-
+## git reflog  查看版本指针
+## git reset --hard xxx   回到具体某个版本
