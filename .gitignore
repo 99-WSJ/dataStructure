@@ -51,3 +51,4 @@ build
 
 ## git reflog  查看版本指针
 ## git reset --hard xxx   回到具体某个版本
+## git revert 1234abcd  假设commit ID是1234abcd，撤销该commit的更改
