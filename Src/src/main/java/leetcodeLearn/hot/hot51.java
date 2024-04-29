@@ -10,6 +10,7 @@ import java.util.Map;
  * @date 2024年04月24日 21:06
  */
 public class hot51 {
+
     static boolean[][] visit;
     static int[][] move = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     static int count = 0;
