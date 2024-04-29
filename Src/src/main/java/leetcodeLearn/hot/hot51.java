@@ -6,4 +6,7 @@ package leetcodeLearn.hot;
  * @date 2024年04月24日 21:06
  */
 public class hot51 {
+    public static void main(String[] args) {
+
+    }
 }
