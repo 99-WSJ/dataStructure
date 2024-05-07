@@ -1,7 +1,5 @@
-package structure.designPattern;
+package designPattern;
 
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
 
 /**
  * 饿汉模式  在类加载的时候已经初始化了，final修饰不会出现县城问题
