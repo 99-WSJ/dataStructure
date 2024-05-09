@@ -2,7 +2,7 @@ package leetcodeLearn.hot;
 
 /**
  * @author wsj
- * @description
+ * @description  153、寻找旋转排序数组中的最小值
  * @date 2024年04月28日 0:07
  */
 public class hot67 {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author wsj
- * @description
+ * @description 搜索二维矩阵
  * @date 2024年04月27日 21:02
  */
 public class hot64 {
