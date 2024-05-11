@@ -19,5 +19,6 @@ public class hot82 {
         if( m == 1) {
             res.add(new ArrayList<>());
         }
+        return res;
     }
 }
