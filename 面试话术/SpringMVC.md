@@ -1,37 +1,51 @@
-![image-20240515162045609](C:/Users/WSJ/Desktop/704Sync_dataStructure/dataStructure/%E9%9D%A2%E8%AF%95%E8%AF%9D%E6%9C%AF/SpringMVC.assets/image-20240515162045609.png)
+![image-20240515162045609](C:/Users/WSJ/Desktop/dataStructure/%E9%9D%A2%E8%AF%95%E8%AF%9D%E6%9C%AF/SpringMVC.assets/image-20240515162045609.png)
+
+![image-20240516120954977](SpringMVC.assets/image-20240516120954977.png)
 
 #### 流程
 
-执行前；当一个请求发来时先进服务器（Tomcat）,在服务器中会有拦截器，过滤器啊，等这些功能走完之后，才真正的进入了框架中。
+1. 用户通过浏览器发起 HttpRequest 请求到前端控制器 (DispatcherServlet)。
 
-1.用户发来一个请求，首先进入的是前端控制器DispatcherServlet
+2. DispatcherServlet 将用户请求发送给处理器映射器 (HandlerMapping)。
 
-2.前端控制器将（DispacherServlet）用户发来的请求发送给处理器映射器（HandlerMapping）
+3. 处理器映射器 (HandlerMapping)会根据请求，找到负责处理该请求的处理器，并将其封装为处理器执行链 返回(HandlerExecutionChain)给 DispatcherServlet
 
-3.处理器映射器根据前端控制器发来的用户的请求找到对应符合的控制器（Handler）,并且将其封装成处理器执行链，返回给前端控制器。
+4. DispatcherServlet 会根据 处理器执行链 中的处理器，找到能够执行该处理器的处理器适配器(HandlerAdaptor) --注，处理器适配器有多个
 
-4.处理器适配器接收到来自前端控制器的执行链后，找到对应执行此执行链的处理器适配器（HandlerAdapter）来调用的具体的控制器（就是说其对应的方法或者逻辑）
+5. 处理器适配器 (HandlerAdaptoer) 会调用对应的具体的 Controller
 
-5.控制器执行完成后，会返回一个ModelAndView对象给处理器适配器
+6. Controller 将处理结果及要跳转的视图封装到一个对象ModelAndView 中并将其返回给处理器适配器(HandlerAdaptor)
 
-6.处理器适配器将返回来的ModelAndView对象返回给前端控制器(到这里所有的业务处理过程就要完了，接下就是将结果以页面的的形式相应给用户)
+7. HandlerAdaptor 直接将 ModelAndView 交给 DispatcherServlet ，至此，业务处理完毕
 
-7.前端控制器将返回回来的ModelAndView对象交给视图解析器（ViewResolver），视图解析器根据传过里的View对象解析成对应的页面对象，然后将页面对象和Model对象返回给前端控制器。
+8. 业务处理完毕后，我们需要将处理结果展示给用户。于是DisptcherServlet 调用ViewResolver，将 ModelAndView 中的视图名称封装为视图对象
 
-8.前端控制器再将返回回来的对象交给视图（View）,视图根据传过来的Model对象再一次的对页面进行渲染，然后在返回给前端控制器。
+9. ViewResolver 将封装好的视图 (View) 对象返回给 DispatcherServlet
 
-9.前端控制器将完成的结果响应给浏览器，然后浏览器在展现给用户。
+10. DispatcherServlet 调用视图对象，让其自己 (View) 进行渲染（将模型数据填充至视图中），形成响应对象 (HttpResponse)
+
+11. 前端控制器 (DispatcherServlet) 响应 (HttpResponse) 给浏览器，展示在页面上。
+
 
 #### 代码流程
 
 ```java
 doService ==> doDispatch
-// 
+    
+// 返回执行链
+mappedHandler = getHandler(processedRequest);
+
+// 发送执行链给HandleAdaptor,返回modelAndView
+// 决定使用哪个handleAdaptor
 HandlerAdapter ha = this.getHandlerAdapter(mappedHandler.getHandler());
+// 拦截器方法
 if (!mappedHandler.applyPreHandle(processedRequest, response))  {return;}
+// 具体执行Controller，返回一个ModelAndView
  mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+// 拦截器方法
 mappedHandler.applyPostHandle(processedRequest, response, mv);
 // preHandle,postHandle,afterHandler都是在HandlerExecutionChain类里面
+
 
 ```
 
