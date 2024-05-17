@@ -1,5 +1,8 @@
 package test.basis;
 
+import com.sun.org.apache.xml.internal.utils.StringBufferPool;
+
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class StringDemo {
@@ -9,5 +12,7 @@ public class StringDemo {
         String intern = str.intern();
         System.out.println(str);
 
+
     }
 }
+

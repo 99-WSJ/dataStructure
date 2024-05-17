@@ -17,7 +17,7 @@ class Singleton1 {
  * 懒汉模式  使用synchronized确保线程安全，可能会影响性能
  */
 class Singleton2 {
-    private static Singleton2 instance;
+    private static  Singleton2 instance;
     private Singleton2() {}
     public static synchronized Singleton2 getInstance() {
         if(instance == null) {
@@ -35,7 +35,7 @@ class Singleton2 {
  * 避免了每次都执行同步方法。
  */
 public class Singleton {
-    private static Singleton instance;
+    private static volatile Singleton instance;
     private Singleton() {}
     public static Singleton getInstance() {
         if(instance == null) {
