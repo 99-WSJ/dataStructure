@@ -14,6 +14,9 @@ public class ThreadPoolDemo1 {
         for (int i = 0; i < 20; i++) {
             executor.submit(new Task(i));
         }
+        String str;
+        StringBuilder s = new StringBuilder();
+        StringBuffer p;
 
         // 关闭线程池
         executor.shutdown();
