@@ -1,10 +1,21 @@
 package test.jihe;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class arrayToListDemo {
+
+/**
+ * @author 阿叙
+ * Array转list,更改数组元素会影响list，引用类型
+ * list转数组，更改list中元素，不会影响数组，因为 Arrays.copyOf()是返回新数组
+ *
+ */
+
+public class ArrayToListDemo {
     public static void main(String[] args) {
         //// 创建一个数组
         //String[] array = {"apple", "banana", "cherry"};
@@ -30,5 +41,6 @@ public class arrayToListDemo {
 
         // 输出数组内容
         System.out.println("Array: " + Arrays.toString(array));
+
     }
 }
