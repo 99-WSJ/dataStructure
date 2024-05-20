@@ -2,6 +2,10 @@ package structure;
 
 import java.util.BitSet;
 
+/**
+ * @author 阿叙
+ * 布隆过滤器实现
+ */
 public class MyBloomFilter {
     public static void main(String[] args) {
         String value1 = "https://javaguide.cn/";
@@ -50,7 +54,7 @@ public class MyBloomFilter {
      */
     public void add(Object value) {
         for (SimpleHash f : func) {
-            System.out.println("index" + f.hash(value));
+            System.out.println("index： " + f.hash(value));
             bits.set(f.hash(value), true);
         }
     }
