@@ -1,10 +1,7 @@
-package test.jihe;
+package test.testCollections;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 

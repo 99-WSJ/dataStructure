@@ -2,7 +2,7 @@ package designPattern;
 
 
 /**
- * 饿汉模式  在类加载的时候已经初始化了，final修饰不会出现县城问题
+ * 饿汉模式  在类加载的时候已经初始化了，final修饰不会出现线程问题
  */
 class Singleton1 {
     private static final  Singleton1 instance = new Singleton1();
