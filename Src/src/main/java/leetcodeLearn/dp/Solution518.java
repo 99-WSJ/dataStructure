@@ -13,8 +13,8 @@ import java.util.concurrent.ForkJoinPool;
  **/
 public class Solution518 {
     public static void main(String[] args) {
-        int[] nums = {1,2,5};
-        int amount = 5;
+        int[] nums = {1,2,3};
+        int amount = 4;
         System.out.println(change(amount, nums));
     }
     public static int change(int amount, int[] coins) {
