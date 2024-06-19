@@ -27,7 +27,6 @@ class Singleton2 {
     }
 }
 
-
 /**
  * 懒汉式改进
  * 可以使用双重检查锁（Double-Checked Locking）来提高性能和线程安全性。
