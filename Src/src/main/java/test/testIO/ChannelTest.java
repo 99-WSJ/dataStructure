@@ -12,7 +12,7 @@ public class ChannelTest {
     public void write() {
         try {
             //1.字节输出流通向目标文件
-            FileOutputStream fos = new FileOutputStream("input.txt");
+            FileOutputStream fos = new FileOutputStream("orders.txt");
             //2.得到字节输出流对应的通道Channel
             FileChannel channel = fos.getChannel();
             //3.分配缓存区
