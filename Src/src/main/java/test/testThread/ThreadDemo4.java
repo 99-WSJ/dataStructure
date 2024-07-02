@@ -2,8 +2,10 @@ package test.testThread;
 
 
 
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 创建线程的方式四：使用线程池（批量使用线程）
@@ -29,6 +31,7 @@ class NumberThread implements Runnable{
 class NumberThread1 implements Runnable{
     @Override
     public void run() {
+
         for(int i = 0;i<100; i++){
             if(i%2==1){
                 System.out.println(Thread.currentThread().getName()+":"+i);

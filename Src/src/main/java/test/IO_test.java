@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 
 public class IO_test {
     public static void main(String[] args) {
-        try (InputStream fis = new FileInputStream("input.txt")) {
+        try (InputStream fis = new FileInputStream("orders.txt")) {
             System.out.println("Number of remaining bytes:"
                     + fis.available());
             int content;

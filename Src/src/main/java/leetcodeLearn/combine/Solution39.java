@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author 阿叙
+ */
 public class Solution39 {
     List<List<Integer>> res = new ArrayList<>();
     LinkedList<Integer> path = new LinkedList<>();

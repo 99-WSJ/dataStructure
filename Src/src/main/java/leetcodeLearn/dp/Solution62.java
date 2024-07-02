@@ -2,6 +2,11 @@ package leetcodeLearn.dp;
 
 /**
  * @author wsj
+ *     确定dp数组（dp table）以及下标的含义
+ *     确定递推公式
+ *     dp数组如何初始化
+ *     确定遍历顺序
+ *     举例推导dp数组
  * @description 62 不同路径
  * @date 2024年05月09日 9:12
  */
