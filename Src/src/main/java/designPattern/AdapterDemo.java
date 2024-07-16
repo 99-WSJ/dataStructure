@@ -1,5 +1,7 @@
 package designPattern;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
 /**
  * @author 阿叙
  * 在开发过程中，适配器模式往往扮演者“补救”和“扩展”的⻆⾊：

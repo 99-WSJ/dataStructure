@@ -1,5 +1,6 @@
 package handwrite;
 
+import java.lang.annotation.Target;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -10,41 +11,42 @@ import java.lang.reflect.Proxy;
  * @author: wsj
  * @create: 2024-07-01 20:11
  **/
-public class DynamicProxyDemo {
+public class DynamicProxyDemo{
     public static void main(String[] args) {
-        Person person = new student();
-        MyInvoke myInvoke = new MyInvoke(person);
-
+        Person person = new Student();
+        MyInvoke handle = new MyInvoke(person);
         Person proxy = (Person) Proxy.newProxyInstance(person.getClass().getClassLoader(),
                 person.getClass().getInterfaces(),
-                myInvoke);
-        proxy.doSomething();
+                handle);
+        proxy.doSome();
     }
 }
 
 interface Person{
-    void doSomething();
+    void doSome();
 }
-class student implements Person {
+
+class Student implements Person{
 
     @Override
-    public void doSomething() {
-        System.out.println("doing ==========");
+    public void doSome() {
+        System.out.println("==========");
     }
 }
 
-class MyInvoke implements InvocationHandler {
-    private Object obj;
-    public MyInvoke(Object obj) {
-        this.obj = obj;
+class MyInvoke implements InvocationHandler{
+
+    private Object object;
+
+    public MyInvoke(Object target) {
+        this.object  = target;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("doing before");
-        Object res = method.invoke(obj, args);
-        System.out.println("doing after");
-        return obj;
+        System.out.println("before");
+        Object res = method.invoke(object, args);
+        System.out.println("after");
+        return res;
     }
 }
-

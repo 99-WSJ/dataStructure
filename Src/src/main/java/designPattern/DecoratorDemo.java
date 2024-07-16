@@ -1,40 +1,53 @@
 package designPattern;
 
+/**
+ * 一个组件接口、2个具体组件（n）
+ * 一个抽象装饰类，2个具体装饰类（n）
+ * @author 阿叙
+ */
 public class DecoratorDemo {
     public static void main(String[] args) {
         // 创建具体组件
-        Component concreteComponent = new ConcreteComponent();
+        Coffee bcoffee = new BlackCoffee();
         // 使⽤具体装饰者包装具体组件
-        Decorator decorator = new ConcreteDecorator(concreteComponent);
+        Decorator decorator = new MilkDecorator(bcoffee);
         // 调⽤操作
-        decorator.operation();
+        decorator.brew();
     }
 }
 
-// 组件接⼝
-interface Component {
-    void operation();
+// 咖啡接⼝
+interface Coffee {
+    void brew();
 }
 
-// 具体组件
-class ConcreteComponent implements Component {
+// 具体的⿊咖啡类
+class BlackCoffee implements Coffee {
     @Override
-    public void operation() {
-        System.out.println("ConcreteComponent operation");
+    public void brew() {
+        System.out.println("Brewing Black Coffee");
+    }
+}
+// 具体的拿铁类
+class Latte implements Coffee {
+    @Override
+    public void brew() {
+        System.out.println("Brewing Latte");
+    }
+}
+// 装饰者抽象类
+abstract class Decorator implements Coffee {
+    protected Coffee coffee;
+    public Decorator(Coffee coffee) {
+        this.coffee = coffee;
+    }
+    @Override
+    public void brew() {
+        coffee.brew();
     }
 }
 
-// 定义⼀个抽象的装饰者类，继承⾃Component
-abstract class Decorator implements Component {
-    protected Component component;
-    public Decorator(Component component) {
-        this.component = component;
-    }
-    @Override
-    public void operation() {
-        component.operation();
-    }
-}
+
 
 // 具体的装饰者实现
 // 如果只有一个接口和实现类，要增加新的功能的时候需要改动原代码，现在使用装饰器可以增加新的功能；
@@ -43,16 +56,26 @@ abstract class Decorator implements Component {
 // 装饰模式通常在以下⼏种情况使⽤：
 // 当需要给⼀个现有类添加附加功能，但由于某些原因不能使⽤继承来⽣成⼦类进⾏扩充时，可以使⽤装饰模式。
 // 动态的添加和覆盖功能：当对象的功能要求可以动态地添加，也可以再动态地撤销时可以使⽤装饰模式。
-class ConcreteDecorator extends Decorator {
-    public ConcreteDecorator(Component component) {
-        super(component);
+
+// 具体的⽜奶装饰者类
+class MilkDecorator extends Decorator {
+    public MilkDecorator(Coffee coffee) {
+        super(coffee);
     }
-    // 根据需要添加额外的⽅法
     @Override
-    public void operation() {
-        // 可以在调⽤前后添加额外的⾏为
-        System.out.println("Before operation in ConcreteDecorator");
-        super.operation();
-        System.out.println("After operation in ConcreteDecorator");
+    public void brew() {
+        super.brew();
+        System.out.println("Adding Milk");
+    }
+}
+// 具体的糖装饰者类
+class SugarDecorator extends Decorator {
+    public SugarDecorator(Coffee coffee) {
+        super(coffee);
+    }
+    @Override
+    public void brew() {
+        super.brew();
+        System.out.println("Adding Sugar");
     }
 }
