@@ -13,16 +13,6 @@ public class hot100 {
     }
 
     private static int findDuplicate(int[] nums) {
-        // 要求原地操作，不能原地排序
-        // Arrays.sort(nums);
-        // int temp = nums[0];
-        // for (int i = 1; i < nums.length; i++) {
-        //     if(nums[i] == temp) {
-        //         return nums[i];
-        //     }
-        //     temp = nums[i];
-        // }
-        // return -1;
         int slow = 0, fast = 0;
         do {
             slow = nums[slow];
