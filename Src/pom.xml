@@ -51,6 +51,11 @@
             <artifactId>spring-core</artifactId>
             <version>5.3.13</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.22</version>
+        </dependency>
 
         <!-- Spring事务管理依赖 -->
         <dependency>

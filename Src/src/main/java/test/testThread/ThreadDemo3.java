@@ -29,6 +29,7 @@ class NumThread implements Callable{
     //可以抛出异常
     @Override
     public Object call() throws Exception {
+        System.out.println("异步执行");
         for(int i = 0;i<=100;i++){
             if(i % 2 == 0){
                 System.out.println(Thread.currentThread().getName()+":"+i);

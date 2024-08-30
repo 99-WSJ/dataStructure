@@ -1,7 +1,5 @@
-package test;
+package test.testHutool;
 
-import cn.hutool.bloomfilter.BloomFilterUtil;
-import cn.hutool.extra.tokenizer.TokenizerUtil;
 import cn.hutool.json.JSONUtil;
 import lombok.Data;
 
