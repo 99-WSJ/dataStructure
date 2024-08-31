@@ -2,6 +2,7 @@ package spring.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,7 @@ public class UserController {
     @Autowired
     @Resource
     private UserService userService;
+    AbstractApplicationContext abstractApplicationContext;
 
     // setter 注入
     // 功能性问题：无法注入一个不可变的对象（final 修饰的对象）；
