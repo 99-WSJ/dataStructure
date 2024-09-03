@@ -33,7 +33,6 @@ public class UserController {
      // 设计原则问题：更容易违背单一设计原则。操作简单，多个属性注入是否必要，容易滥用
 
     @Autowired
-    @Resource
     private UserService userService;
     AbstractApplicationContext abstractApplicationContext;
 

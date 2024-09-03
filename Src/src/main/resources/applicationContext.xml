@@ -12,14 +12,20 @@
 
     <!-- id为名称，name为别名；bean名称：user3，1个别名：[user3_1] -->
     <bean id="user3" name="user3_1" class="spring.pojo.UserInfo">
-        <property name="name" value="123456"></property>
+        <property name="nikeName" value="123456"></property>
     </bean>
 
     <!-- bean名称：user4，多个别名：[user4_1,user4_2,user4_3,user4_4] -->
     <bean id="user4" name="user4_1,user4_2;user4_3 user4_4" class="spring.pojo.UserInfo"/>
 
     <!-- bean名称：user5，别名：[user5_1,user5_2,user5_3,user5_4] -->
-    <bean name="user5,user5_1,user5_2;user5_3 user5_4" class="spring.pojo.UserInfo"/>
+    <bean name="user5,user5_1,user5_2;user5_3 user5_4" class="spring.pojo.UserInfo">
+        <property name="user" ref="a"></property>
+    </bean>
+
+    <bean id="a" class="spring.pojo.User">
+        <property name="userInfo" ref="user5"></property>
+    </bean>
 
 
 </beans>
