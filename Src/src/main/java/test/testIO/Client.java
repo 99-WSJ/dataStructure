@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  * BIO:同步阻塞IO
@@ -19,8 +20,13 @@ public class Client {
             //3.把字节输出流包装成一个打印流
             PrintStream ps = new PrintStream(os);
             //ps.print("hello World! 服务端，你好");
-            ps.println("hello World! 服务端，你好");
-            ps.flush();
+            Scanner sc = new Scanner(System.in);
+            while (true){
+                System.out.print("请说：");
+                String msg = sc.nextLine();
+                ps.println(msg);
+                ps.flush();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
