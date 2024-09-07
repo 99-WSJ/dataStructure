@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @program: Src
- * @description: 第一题
+ * @description:
  * @author: wsj
  * @create: 2024-09-04 16:03
  **/
