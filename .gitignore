@@ -45,6 +45,7 @@ build
 *.ctxt
 .Src/target
 **/exam/
+**/examfinal/
 
 ## git fetch origin
 ## git reset --hard origin/master  回到远程仓库的位置
