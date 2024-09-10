@@ -8,19 +8,20 @@ package handwrite;
  * @create: 2024-07-01 20:04
  **/
 public class Singleton {
-    private static final Singleton instance = new Singleton();
-    private Singleton(){}
-    public static Singleton  getInstance() {
+    private final static Singleton instance = new Singleton();
+    private Singleton(){
+
+    }
+    public static Singleton getInstance() {
         return instance;
     }
 
     private static Singleton instance1;
-    public static synchronized Singleton getInstance1() {
+    public static synchronized Singleton getInstance1(){
         if(instance1 == null) {
             instance1 = new Singleton();
         }
         return instance1;
-
     }
 
     private static volatile Singleton instance2;
@@ -34,6 +35,7 @@ public class Singleton {
         }
         return instance2;
     }
+
 
 }
 
