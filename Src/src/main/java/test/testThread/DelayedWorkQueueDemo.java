@@ -36,9 +36,9 @@ public class DelayedWorkQueueDemo {
         DelayQueue<DelayedTask> delayedQueue = new DelayQueue<>();
 
         // 添加延迟任务到延迟队列
-        delayedQueue.put(new DelayedTask("Task 1", 3000));
-        delayedQueue.put(new DelayedTask("Task 2", 5000));
-        delayedQueue.put(new DelayedTask("Task 3", 2000));
+        delayedQueue.put(new DelayedTask("Task 1", 30000));
+        delayedQueue.put(new DelayedTask("Task 2", 50000));
+        delayedQueue.put(new DelayedTask("Task 3", 20000));
 
         // 从延迟队列中取出任务并执行
         while (!delayedQueue.isEmpty()) {

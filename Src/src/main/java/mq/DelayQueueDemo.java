@@ -57,10 +57,10 @@ public class DelayQueueDemo {
         DelayQueue<Order> delayQueue = new DelayQueue<>();
 
         // 添加订单到队列中，订单延迟30秒后过期
-        delayQueue.put(new Order("Order1", 5000)); // 5秒后处理
-        delayQueue.put(new Order("Order2", 10000)); // 10秒后处理
-        delayQueue.put(new Order("Order3", 15000)); // 15秒后处理
-        delayQueue.put(new Order("Order22", 9000)); // 15秒后处理
+        delayQueue.put(new Order("Order1", 500000)); // 5秒后处理
+        delayQueue.put(new Order("Order2", 1000000)); // 10秒后处理
+        delayQueue.put(new Order("Order3", 1500000)); // 15秒后处理
+        delayQueue.put(new Order("Order22", 900000)); // 15秒后处理
 
         System.out.println("All orders added to the queue with delay...");
 

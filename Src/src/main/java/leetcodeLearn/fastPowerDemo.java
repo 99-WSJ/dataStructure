@@ -19,11 +19,34 @@ public class fastPowerDemo {
         }
         return res;
     }
+    public static double myPow(double x, int n) {
+        double res = 1.0;
+        boolean flag = true;
+        if(n==0) return res;
+        if(n < 0) {
+            flag = false;
+            n = -n;
+            System.out.println(n);
+        }
+        while(n > 0){
+            if(n % 2 == 1) {
+                res = res * x;
+            }
+            x = x * x;
+            n = n / 2;
+        }
+        return flag?res : 1.0/res;
+
+    }
+
 
     public static void main(String[] args) {
         long base = 2;
         long exponent = 11;
+
         long result = fastPower(base, exponent);
+        double res = myPow(2.0, -2147483647);
+        System.out.println(res);
         System.out.println(base + "的" + exponent + "次方是: " + result); // 输出: 1024
     }
 }
