@@ -3,19 +3,17 @@ package structure.sort;
 import java.util.Arrays;
 public class QuickSort {
     public static void quickSort(int[] arr, int l, int r) {
-        if (l < r) {
-            int i = l;
-            int j = r;
-            int x = arr[i];
-            while (i < j) {
-                while (i < j && arr[j] > x) {
+        if(l < r) {
+            int i = l, j = r,x = arr[l];
+            while(i < j) {
+                while(i < j && arr[j] > x) {
                     j--;
                 }
-                if (i < j) {
+                if(i < j) {
                     arr[i] = arr[j];
                     i++;
                 }
-                while (i < j && arr[i] < x) {
+                while(i < j && arr[i] < x) {
                     i++;
                 }
                 if(i < j) {
@@ -25,7 +23,7 @@ public class QuickSort {
             }
             arr[i] = x;
             quickSort(arr, l, i-1);
-            quickSort(arr, i + 1, r);
+            quickSort(arr, i+1, r);
         }
     }
 
