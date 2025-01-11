@@ -20,29 +20,22 @@ public class hot3 {
         System.out.println(longestConsecutive(nums));
     }
     public static int longestConsecutive(int[] nums) {
-        Set<Integer> num_set = new HashSet<Integer>();
-        for (int num : nums) {
-            num_set.add(num);
-            System.out.println(num_set);
+        Set<Integer> set = new HashSet<>();
+        for(int i : nums) {
+            set.add(i);
         }
-
-        int longestStreak = 0;
-
-        for (int num : num_set) {
-            if (!num_set.contains(num - 1)) {
-                int currentNum = num;
-                int currentStreak = 1;
-
-                while (num_set.contains(currentNum + 1)) {
-                    currentNum += 1;
-                    currentStreak += 1;
-                }
-
-                longestStreak = Math.max(longestStreak, currentStreak);
+        int res = 0;
+        for(int x : set) {
+            if(set.contains(x - 1)) {
+                continue;
             }
+            int y = x + 1;
+            while(set.contains(y)) {
+                y++;
+            }
+            res = Math.max(res, y - x);
         }
-
-        return longestStreak;
+        return res;
 
     }
 

@@ -1,8 +1,8 @@
 package spring.beandemo;
 
-import exam.test.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import spring.pojo.User;
 
 /**
  * @program: Src
