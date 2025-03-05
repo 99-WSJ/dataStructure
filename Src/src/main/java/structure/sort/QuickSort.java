@@ -10,6 +10,8 @@ public class QuickSort {
                     j--;
                 }
                 if(i < j) {
+                    // [3, 1, 4, 1, 5, 9, 2, 6]
+                    // 确保在指针 i 和 j 相遇或交叉时，不再进行交换操作，避免数组越界和逻辑错误
                     arr[i] = arr[j];
                     i++;
                 }
@@ -22,13 +24,18 @@ public class QuickSort {
                 }
             }
             arr[i] = x;
+            for (int k =l ; k<=r; k++) {
+                System.out.print(arr[k] + " ");
+            }
+            System.out.println();
             quickSort(arr, l, i-1);
             quickSort(arr, i+1, r);
         }
     }
 
     public static void main(String[] args) {
-        int[] array = {6, 72, 113, 11, 23, 12, 52, 12, 9, 16, 5};
+        int[] array = {3, 1, 4, 1, 5, 9, 2, 6};
+        // int[] array = {6, 72, 113, 11, 23, 12, 52, 12, 9, 16, 5};
         quickSort(array, 0, array.length - 1);
         System.out.println("排序后的结果");
         System.out.println(Arrays.toString(array));
