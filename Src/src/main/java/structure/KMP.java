@@ -58,7 +58,7 @@ public class KMP {
             } else {
                 if (j != 0) {
                     // 不匹配时，利用 Next 数组跳过已经匹配的部分
-                    // next数组记录了模式串的特征（最长相同前缀和后缀的长度）
+                    // next数组记录了模式串的特征（最长相等前缀和后缀的长度）
                     j = next[j - 1];
                 } else {
                     // j 为 0，模式串第一个字符不匹配，移动文本串指针
@@ -71,7 +71,7 @@ public class KMP {
 
     public static void main(String[] args) {
         KMP kmp = new KMP();
-        String text = "ABABABCA";
+        String text = "ABABDABABCA";
         String pattern = "ABABC";
         int index = kmp.indexOf(text, pattern);
         if (index != -1) {
