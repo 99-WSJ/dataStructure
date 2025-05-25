@@ -1,5 +1,10 @@
 package test.testThread;
 
+/**
+ * Thread.sleep不会释放锁
+ * lock.wait会释放锁
+ * @author 阿叙
+ */
 public class SleepWait {
     private static final Object lock = new Object();
 
@@ -8,7 +13,7 @@ public class SleepWait {
             synchronized (lock) {
                 System.out.println("Sleeping thread acquired lock");
                 try {
-                    System.out.println("sleep");
+                    System.out.println("sleeping 2s");
                     Thread.sleep(2000); // Sleep for 2 seconds
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -29,11 +34,11 @@ public class SleepWait {
             }
         });
 
-        waitThread.start();
         sleepThread.start();
+        waitThread.start();
 
         try {
-            Thread.sleep(500); // Give some time for threads to start
+            Thread.sleep(3000); // 3s和0.5s有区别
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

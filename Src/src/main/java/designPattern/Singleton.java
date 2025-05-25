@@ -1,6 +1,9 @@
 package designPattern;
 
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * 饿汉模式  在类加载的时候已经初始化了，final修饰不会出现线程问题
  */
@@ -45,6 +48,19 @@ public class Singleton {
             }
         }
         return instance;
+    }
+
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        // 获取类的显式构造器
+        Constructor<Singleton> construct =
+                Singleton.class.getDeclaredConstructor();
+        // 可访问私有构造器
+        construct.setAccessible(true);
+        // 利用反射构造新对象
+        Singleton obj1 = construct.newInstance();
+        // 通过正常方式获取单例对象
+        Singleton obj2 = Singleton.getInstance();
+        System.out.println(obj1 == obj2); // false
     }
 }
 

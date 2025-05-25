@@ -21,7 +21,6 @@ class Heap{
        this.capacity = len;
        heap = new int[len];
        size = 0;
-
    }
 
    public Heap(int[] arr){

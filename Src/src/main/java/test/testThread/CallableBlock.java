@@ -11,7 +11,7 @@ public class CallableBlock {
         Callable<Integer> callableTask = () -> {
             try {
                 // 模拟耗时操作
-                System.out.println("sleep");
+                System.out.println("sleeping 3s");
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
